@@ -11,6 +11,7 @@ import NewTripForm from "../trips/NewTripForm";
 import TripForm from "../trips/TripForm";
 import UserDetail from "../profiles/UserDetail";
 import CityForm from "../trips/CityForm";
+import ThankYou from "../common/ThankYou";
 
 /** Site-wide routes.
  *
@@ -49,6 +50,10 @@ function Routes({ login, signup }) {
 
           <PrivateRoute exact path="/trips/new">
             <TripForm />
+          </PrivateRoute>
+
+          <PrivateRoute exact path="/thankyou">
+            <ThankYou/>
           </PrivateRoute>
 
           <PrivateRoute exact path="/hotels">

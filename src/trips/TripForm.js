@@ -55,7 +55,7 @@ function TripForm() {
     } catch(error) {
         console.error("Error submitting new trip:", error);
     }
-    history.push("/trips");
+    history.push("/thankyou");
   }
 
   /** Update form data field */
