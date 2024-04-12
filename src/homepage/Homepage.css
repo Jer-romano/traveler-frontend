@@ -1,0 +1,10 @@
+.Homepage {
+  /* put around the vertical center of page */
+  height: calc(100vh - 150px);
+  display: flex;
+  align-items: center;
+}
+
+.hero-home {
+  background-image: url("https://traveler-capstone-images.s3.us-east-2.amazonaws.com/homepage/unsplash-pyramid-photo.jpg");
+}

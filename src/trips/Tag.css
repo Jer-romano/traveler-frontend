@@ -1,0 +1,8 @@
+.tag {
+    background-color: cornflowerblue;
+    color: white;
+    font-size: medium;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
+}
