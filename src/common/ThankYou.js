@@ -6,7 +6,7 @@ const ThankYou = () => {
 
     return (
     
-        <div>
+        <div className='container'>
         <h1>Thanks for uploading your trip!</h1>
         <h2>AI is currently analyzing your images</h2>
         <Link to={'/trips'}>

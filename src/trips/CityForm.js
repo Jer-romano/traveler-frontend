@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import secrets from "../api/secret";
 
 function CityForm() {
   const [city, setCity] = useState('');
@@ -9,7 +10,7 @@ function CityForm() {
   const [dates, setDates] = useState({});
 
   const headers = {
-    'X-RapidAPI-Key': '6cb8181afamsh5437692e02a43efp15980ejsne9ad050cdf8b',
+    'X-RapidAPI-Key': secrets["X-RapidAPI-Key"],
     'X-RapidAPI-Host': 'booking-com15.p.rapidapi.com'
   };
 
