@@ -3,6 +3,7 @@ import TravelerApi from "../api/api";
 import TripPreviewCard from "./TripPreviewCard";
 import LoadingSpinner from "../common/LoadingSpinner";
 import UserContext from "../auth/UserContext";
+import "./TripList.css";
 
 /** Show page with list of trips.
  *

@@ -37,13 +37,13 @@ function Homepage() {
                     </Link>
                   </p>
               )}
-              <p>
+              <div className="photo-cred">
                 Photo by 
                 <a href="https://unsplash.com/@spencerdavis?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-                   Spencer Davis
+                    Spencer Davis
                   </a> on <a href="https://unsplash.com/photos/person-walking-near-the-great-sphinx-ONVA6s03hg8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
                     Unsplash</a>
-              </p>
+              </div>
         </div>
       </div>
   );

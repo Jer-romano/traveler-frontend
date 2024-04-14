@@ -7,11 +7,11 @@ import SignupForm from "../auth/SignupForm";
 import PrivateRoute from "./PrivateRoute";
 import Feed from "../homepage/Feed";
 import TripDetail from "../trips/TripDetail";
-import NewTripForm from "../trips/NewTripForm";
 import TripForm from "../trips/TripForm";
 import UserDetail from "../profiles/UserDetail";
-import CityForm from "../trips/CityForm";
 import ThankYou from "../common/ThankYou";
+import HotelForm from "../trips/HotelForm";
+import "./Routes.css";
 
 /** Site-wide routes.
  *
@@ -29,7 +29,7 @@ function Routes({ login, signup }) {
   );
 
   return (
-      <div className="pt-5">
+      <div className="pt-5 all-routes">
         <Switch>
 
           <Route exact path="/">
@@ -57,7 +57,7 @@ function Routes({ login, signup }) {
           </PrivateRoute>
 
           <PrivateRoute exact path="/hotels">
-            <CityForm/>
+            <HotelForm/>
           </PrivateRoute>
 
           <PrivateRoute exact path="/trips/:id">

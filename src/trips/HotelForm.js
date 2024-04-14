@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import secrets from "../api/secret";
+import HotelCard from './HotelCard';
 
-function CityForm() {
+function HotelForm() {
   const [city, setCity] = useState('');
   const [choices, setChoices] = useState([]);
   const [selectedChoice, setSelectedChoice] = useState('');
   const [hotels, setHotels] = useState([]);
-  const [dates, setDates] = useState({});
+  const [dates, setDates] = useState({arr_date: "", dept_date: ""});
 
   const headers = {
     'X-RapidAPI-Key': secrets["X-RapidAPI-Key"],
@@ -32,10 +33,6 @@ function CityForm() {
       .catch((error) => console.error('Error fetching choices:', error));
   };
 
-  const fetchHotels = () => {
-
-  }
-
    async function handleSubmit(event) {
     event.preventDefault();
 
@@ -54,17 +51,14 @@ function CityForm() {
         languagecode: 'en-us',
         currency_code: 'USD'
       },
-      headers: {
-        'X-RapidAPI-Key': '6cb8181afamsh5437692e02a43efp15980ejsne9ad050cdf8b',
-        'X-RapidAPI-Host': 'booking-com15.p.rapidapi.com'
-      }
+      headers: headers
     };
     
     try {
       console.log("Choice:", selectedChoice);
-      const response = await axios.request(options);
+      const response = (await axios.request(options)).data;
       console.log(response.data);
-      setHotels(response.data.data.hotels);
+      setHotels(response.data.hotels);
     } catch (error) {
       console.error(error);
     }
@@ -72,42 +66,58 @@ function CityForm() {
 
   return (
     <>
-    <form onSubmit={handleSubmit}>
-      <label>
-        City:
-        <input type="text" value={city} onChange={handleCityChange} />
-      </label>
-      <button type="button" onClick={fetchChoices}>
-        Fetch Choices
-      </button>
-      <ChoiceList choices={choices} setSelectedChoice={setSelectedChoice} />
-      <div>
-        <label htmlFor='arr_date'>Arrival Date (YYYY-MM-DD) </label>
-        <input 
-         type='text'
-         name='arr_date'
-         id='arr_date'
-         value={dates.arr_date}
-         onChange={handleDateChange}
-        />
-      </div>
-      <div>
-        <label htmlFor='dept_date'>Departure Date (YYYY-MM-DD) </label>
-        <input 
-        type='text'
-         name='dept_date'
-         id='dept_date'
-         value={dates.dept_date}
-         onChange={handleDateChange}
-        />
-      </div>
+     <div className="HotelForm">
+      <div className="container col-md-8 offset-md-2 col-lg-4 offset-lg-4">
+        <h2 className="mb-3">Search Hotels</h2>
+        <div className="card">
+          <div className="card-body">
+          <form onSubmit={handleSubmit}>
+          <label>
+            City:
+            <input type="text" value={city} onChange={handleCityChange} />
+          </label>
+          <button type="button"
+           className='btn btn-primary ml-2 fw-normal'
+            onClick={fetchChoices}>
+            Fetch Choices
+          </button>
+          <ChoiceList choices={choices} setSelectedChoice={setSelectedChoice} />
+          <div className='mt-3'>
+            <label htmlFor='arr_date'>Arrival Date (YYYY-MM-DD) </label>
+            <input 
+            type='text'
+            name='arr_date'
+            id='arr_date'
+            value={dates.arr_date}
+            onChange={handleDateChange}
+            />
+          </div>
+          <div className='mt-3 mb-3'>
+          <label htmlFor='dept_date'>Departure Date (YYYY-MM-DD) </label>
+          <input 
+          type='text'
+          name='dept_date'
+          id='dept_date'
+          value={dates.dept_date}
+          onChange={handleDateChange}
+          />
+        </div>
       <SubmitButton />
     </form>
-    {hotels && hotels.map((hotel) => (
-      <div key={hotel.hotel_id}>
-        <p>{hotel.accessibilityLabel}</p>
+          </div>
+        </div>
       </div>
+    </div>
+    <div className='mt-4 col-md-8 offset-md-2'>
+    {hotels && hotels.map((hotel) => (
+      <HotelCard
+        key={hotel.hotel_id}
+        name={hotel.property.name}
+        description={hotel.accessibilityLabel}
+      />
     ))}
+    </div>
+    
     </>
   );
 }
@@ -123,12 +133,13 @@ function ChoiceList({ choices, setSelectedChoice }) {
       {/* <pre>{JSON.stringify(choices)}</pre> */}
       {choices.map((choice) => (
         <div key={choice.dest_id}>
-           <label>
+           <label className='ml-2'>
           <input
             type="radio"
             name="choice"
             value={choice.dest_id}
             onChange={handleChoiceChange}
+            className='ml-2'
           />
           {choice.name}, {choice.country}
         </label>
@@ -140,7 +151,7 @@ function ChoiceList({ choices, setSelectedChoice }) {
 }
 
 function SubmitButton() {
-  return <button type="submit">Submit</button>;
+  return <button type="submit" className='btn btn-success'>Submit</button>;
 }
 
-export default CityForm;
+export default HotelForm;

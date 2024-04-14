@@ -111,7 +111,7 @@ function TripForm() {
                   onChange={handleTitleChange}
                 />
               </div>
-
+              <label>Choose your images</label>
               {inputFields.map((input, index) => {
                 return (
                   <div key={index}>
@@ -136,11 +136,11 @@ function TripForm() {
                   </div>
                 );
               })}
-              <button onClick={addFields} type="button" className="btn btn-secondary add-btn">
+              <button onClick={addFields} type="button" className="btn btn-secondary add-btn mt-5">
                 Add More Images
                 </button>
 
-              <button onClick={handleSubmit} type="submit" className="btn btn-primary float-left submit-btn">
+              <button onClick={handleSubmit} type="submit" className="btn btn-primary float-left mt-5 submit-btn">
                     Submit
               </button>
             </form>

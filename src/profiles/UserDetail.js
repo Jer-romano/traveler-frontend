@@ -30,7 +30,7 @@ const UserDetail = () => {
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col col-lg-9 col-xl-7">
               <div className="card">
-                <div className="rounded-top text-white d-flex flex-row" style={{"backgroundColor": "#000", "height":"200px"}}>
+                <div className="rounded-top text-white d-flex flex-row" style={{"backgroundColor": "navy", "height":"200px"}}>
                   <div className="ms-4 mt-5 d-flex flex-column" style={{"width": "150px"}}>
                     <img src={user.profileImage}
                       alt="Generic placeholder image" className="img-fluid img-thumbnail mt-4 mb-2"
@@ -78,7 +78,8 @@ const UserDetail = () => {
                                 tripImage={t.images[0] ?
                                           t.images[0] :
                                           sampleImage}
-                                id={t.tripId} />
+                                id={t.tripId}
+                                key={t.tripId} />
                         </div>
                      ))}
                  
