@@ -11,7 +11,7 @@ function HotelForm() {
   const [dates, setDates] = useState({arr_date: "", dept_date: ""});
 
   const headers = {
-    'X-RapidAPI-Key': secrets["X-RapidAPI-Key"],
+    'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
     'X-RapidAPI-Host': 'booking-com15.p.rapidapi.com'
   };
 

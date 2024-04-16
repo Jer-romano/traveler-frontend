@@ -10,7 +10,7 @@ import TripDetail from "../trips/TripDetail";
 import TripForm from "../trips/TripForm";
 import UserDetail from "../profiles/UserDetail";
 import ThankYou from "../common/ThankYou";
-import HotelForm from "../trips/HotelForm";
+import HotelForm from "../hotels/HotelForm";
 import "./Routes.css";
 
 /** Site-wide routes.

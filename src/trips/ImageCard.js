@@ -6,7 +6,7 @@ const ImageCard = ({ image, caption, tag1, tag2, tag3 }) => {
 
     console.debug("ImageCard:", image);
     return (
-        <div className='card'>
+        <div className='card mt-3'>
             <div className='ImageCard card-body'>
                 <div>
                     <img src={image} alt='Trip image' />
