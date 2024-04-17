@@ -83,9 +83,9 @@ function HotelForm() {
           </button>
           <ChoiceList choices={choices} setSelectedChoice={setSelectedChoice} />
           <div className='mt-3'>
-            <label htmlFor='arr_date'>Arrival Date (YYYY-MM-DD) </label>
+            <label htmlFor='arr_date'>Arrival Date </label>
             <input 
-            type='text'
+            type='date'
             name='arr_date'
             id='arr_date'
             value={dates.arr_date}
@@ -93,9 +93,9 @@ function HotelForm() {
             />
           </div>
           <div className='mt-3 mb-3'>
-          <label htmlFor='dept_date'>Departure Date (YYYY-MM-DD) </label>
+          <label htmlFor='dept_date'>Departure Date </label>
           <input 
-          type='text'
+          type='date'
           name='dept_date'
           id='dept_date'
           value={dates.dept_date}
