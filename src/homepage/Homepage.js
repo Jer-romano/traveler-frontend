@@ -19,6 +19,7 @@ function Homepage() {
   return (
       <div className="Homepage hero-home">
         <div className="container text-center">
+          <div className="greeting">
           <h1 className="mb-4 font-weight-bold">Traveler</h1>
           <p className="lead"> Share the world with others. </p>
           {currentUser
@@ -37,6 +38,7 @@ function Homepage() {
                     </Link>
                   </p>
               )}
+          </div>
               <div className="photo-cred">
                 Photo by 
                 <a href="https://unsplash.com/@spencerdavis?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
