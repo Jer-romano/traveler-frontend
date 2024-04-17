@@ -30,7 +30,8 @@ const TripDetail = () => {
                  </h5>
             </div>
             {trip.images.map( 
-                image => <ImageCard id={image.id}
+                image => <ImageCard key={image.id}
+                                    id={image.id}
                                     image={image.fileUrl}
                                     caption={image.caption}
                                     tag1 = {image.tag1}

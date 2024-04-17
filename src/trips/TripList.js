@@ -17,10 +17,10 @@ import "./TripList.css";
  * Route -> { TripPreviewCard }
  */
 
-function TripList({ includeUser, userId }) {
+function TripList() {
   console.debug("TripList");
 
-  const { currentUser } = useContext(UserContext);
+  //const { currentUser } = useContext(UserContext);
 
   const [trips, setTrips] = useState(null);
   const sampleImage = {fileUrl: "https://traveler-capstone-images.s3.us-east-2.amazonaws.com/tripimages/Image-Placeholder.jpeg"};
@@ -32,19 +32,13 @@ function TripList({ includeUser, userId }) {
 
 
   async function getTrips() {
-    let trips;
-    if(includeUser) {
-      trips  = await TravelerApi.getAllTrips();
-    }
-    else {
-      trips = await TravelerApi.getUserTrips(userId);
-    }
-    setTrips(trips);
+    let tripsResult  = await TravelerApi.getAllTrips();
+  
+    setTrips(tripsResult);
   }
 
   if (!trips) return <LoadingSpinner />;
 
-  if(includeUser) {
     return (
       <div className="TripList col-md-8 offset-md-2">
         {trips.length
@@ -52,33 +46,12 @@ function TripList({ includeUser, userId }) {
                 <div className="TripList-list">
                   {trips.map(c => (
                       <TripPreviewCard
+                          key={c.id}
                           id={c.id}
                           title={c.title}
-                          tripImage={ c.images[0] ?
-                                      c.images[0] :
-                                      sampleImage}
-                          username={c.username}
-                          profileImage={c.profImage}
-                      />
-                  ))}
-                </div>
-            ) : (
-                <p className="lead">Sorry, no results were found!</p>
-            )}
-      </div>
-    );
-  } 
-  else {
-    return (
-      <div className="TripList col-md-8 offset-md-2">
-        {trips.length
-            ? (
-                <div className="TripList-list">
-                  {trips.map(c => (
-                      <TripPreviewCard
-                          id={c.id}
-                          title={c.title}
-                          tripImage={c.images[0].fileUrl}
+                          tripImage={c.images[0] ?
+                                   c.images[0].fileUrl :
+                                    sampleImage}
                       />
                   ))}
                 </div>
@@ -88,6 +61,5 @@ function TripList({ includeUser, userId }) {
       </div>
     );
   }
-}
 
 export default TripList;

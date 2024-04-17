@@ -72,27 +72,17 @@ const UserDetail = () => {
                     <p className="lead fw-normal mb-0">Recent Trips</p>
                   </div>
                   {userTrips && userTrips.map(t => (
-                        <div className='row g-2'>
+                        <div key={t.tripId} className='row g-2'>
                             <TripPreviewCard
                                 title={t.title}
                                 tripImage={t.images[0] ?
                                           t.images[0] :
                                           sampleImage}
                                 id={t.tripId}
-                                key={t.tripId} />
+                                 />
                         </div>
                      ))}
                  
-                  {/* <div className="row g-2">
-                    <div className="col">
-                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"
-                        alt="image 1" className="w-100 rounded-3"/>
-                    </div>
-                    <div className="col">
-                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"
-                        alt="image 1" className="w-100 rounded-3"/>
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </div>
