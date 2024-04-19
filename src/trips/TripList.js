@@ -50,7 +50,7 @@ function TripList() {
                           id={c.id}
                           title={c.title}
                           tripImage={c.images[0] ?
-                                   c.images[0].fileUrl :
+                                   c.images[0] :
                                     sampleImage}
                       />
                   ))}

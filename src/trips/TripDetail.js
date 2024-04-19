@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ImageCard from './ImageCard';
 import TravelerApi from '../api/api';
 import LoadingSpinner from '../common/LoadingSpinner';
+import UserContext from '../auth/UserContext';
 
 const TripDetail = () => {
 
-    const [trip, setTrip] = useState(null);
+    const { currentUser } = useContext(UserContext);
+    const [trip, setTrip] = useState({userId: -1});
+
+    let isOwnTrip = trip.userId === currentUser.id;
 
     const { id } = useParams();
     console.debug("Trip Detail", "tripId=", id);
