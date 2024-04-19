@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pt-5 all-routes"
+  >
+    <div
+      class="Homepage hero-home"
+    >
+      <div
+        class="container text-center"
+      >
+        <div
+          class="greeting"
+        >
+          <h1
+            class="mb-4 font-weight-bold"
+          >
+            Traveler
+          </h1>
+          <p
+            class="lead"
+          >
+             Share the world with others. 
+          </p>
+          <h2>
+            Welcome Back, testuser!
+          </h2>
+        </div>
+        <div
+          class="photo-cred"
+        >
+          Photo by
+          <a
+            href="https://unsplash.com/@spencerdavis?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+          >
+            Spencer Davis
+          </a>
+           on 
+          <a
+            href="https://unsplash.com/photos/person-walking-near-the-great-sphinx-ONVA6s03hg8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+          >
+            Unsplash
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

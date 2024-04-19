@@ -27,6 +27,8 @@ function TripPreviewCard({id, title, tripImage, username }) {
             <Tag tag={tripImage.tag1}/>
             <Tag tag={tripImage.tag2}/>
             <Tag tag={tripImage.tag3}/>
+            <Tag tag={tripImage.tag4}/>
+            <Tag tag={tripImage.tag5}/>
           </span>
           <h4 className="mt-4">
             {/* {profileImage && <img src={profileImage}

@@ -37,6 +37,8 @@ const TripDetail = () => {
                                     tag1 = {image.tag1}
                                     tag2 = {image.tag2}
                                     tag3 = {image.tag3}
+                                    tag4 = {image.tag4}
+                                    tag5 = {image.tag5}
                                     /> )}
         </div>
     );
