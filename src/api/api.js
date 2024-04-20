@@ -74,6 +74,11 @@ class TravelerApi {
     return res.trip;
   }
 
+  static async deleteTrip(id) {
+    let res = await this.request(`trips/${id}`, {}, "delete");
+    return res.deleted;
+  }
+
   /** Get all trips from a single user */
   static async getUserTrips(username) {
     let res = await this.request(`users/${username}/trips`)
