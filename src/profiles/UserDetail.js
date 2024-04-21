@@ -72,7 +72,7 @@ const UserDetail = () => {
                     <p className="lead fw-normal mb-0">Recent Trips</p>
                   </div>
                   {userTrips && userTrips.map(t => (
-                        <div key={t.tripId} key={t.tripId} className='row g-2'>
+                        <div key={t.tripId} className='row g-2'>
                             <TripPreviewCard
                                 title={t.title}
                                 tripImage={t.images[0] ?
