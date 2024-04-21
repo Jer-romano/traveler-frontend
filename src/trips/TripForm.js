@@ -27,7 +27,7 @@ function TripForm() {
   const [formErrors, setFormErrors] = useState([]);
 
   console.debug(
-    "NewTripForm",
+    "TripForm",
     "tripTitle=", tripData.title,
     "inputFields=", inputFields,
     "formErrors=", formErrors
@@ -57,13 +57,6 @@ function TripForm() {
     }
     history.push("/thankyou");
   }
-
-  /** Update form data field */
-//   const handleChange = (index, evt) => {
-//     let data = [...inputFields];
-//     data[index][evt.target.name] = evt.target.value;
-//     setInputFields(data);
-//   }; aa
 
 /** Update form data field */
     function handleTitleChange(evt) {

@@ -10,8 +10,11 @@ function HotelForm() {
   const [hotels, setHotels] = useState([]);
   const [dates, setDates] = useState({arr_date: "", dept_date: ""});
 
+  const apiKey = process.env.NODE_ENV === "production" ? 
+                  process.env.REACT_APP_API_KEY : secrets["X-RapidAPI-Key"];
+
   const headers = {
-    'X-RapidAPI-Key': secrets["X-RapidAPI-Key"],
+    'X-RapidAPI-Key': apiKey,
     'X-RapidAPI-Host': 'booking-com15.p.rapidapi.com'
   };
 
@@ -55,9 +58,9 @@ function HotelForm() {
     };
     
     try {
-      console.log("Choice:", selectedChoice);
+      //console.log("Choice:", selectedChoice);
       const response = (await axios.request(options)).data;
-      console.log(response.data);
+      //console.log(response.data);
       setHotels(response.data.hotels);
     } catch (error) {
       console.error(error);

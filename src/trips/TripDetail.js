@@ -1,8 +1,11 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useHistory, Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import ImageCard from './ImageCard';
 import TravelerApi from '../api/api';
 import LoadingSpinner from '../common/LoadingSpinner';
+import UserContext from '../auth/UserContext';
 import UserContext from '../auth/UserContext';
 import Alert from '../common/Alert';
 
