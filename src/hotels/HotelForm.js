@@ -3,6 +3,17 @@ import axios from 'axios';
 import secrets from "../api/secret";
 import HotelCard from './HotelCard';
 
+/**
+ * Search for hotels by city or location.
+ * The user first enters a city into the search bar and clicks "fetch choices"
+ * This triggers an API call and the API returns up to 5 location choices (choices). This
+ * is necessary because there can be two cities with the same name. The user chooses
+ * the one that is most accurate (selectedChoice). 
+ * The user then inputs their desired arrival and departure date and clicks "search"
+ *  This triggers another API call that returns a list of available hotels.
+ *  Each hotel is mapped to a HotelCard
+ */
+
 function HotelForm() {
   const [city, setCity] = useState('');
   const [choices, setChoices] = useState([]);

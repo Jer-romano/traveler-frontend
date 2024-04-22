@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Tag from "./Tag";
 import "./TripPreviewCard.css";
 
-/** Show limited information about a trip
+/** Show limited information about a trip, i.e. the title and the first image
  *
  * Is rendered by TripList to show a "card" for each trip.
  *

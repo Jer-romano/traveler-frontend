@@ -7,11 +7,9 @@ import "./TripList.css";
 /** Show page with list of trips.
  *
  * On mount, loads trips from API.
- * If includeUser is true, the TripPreviewCard is passed
- * the username and profile image props
  * This is routed to at /trips
  * 
- * trips should equal [{id, userId, username, title, image }]
+ * trips should equal [{id, userId, username, title, images }]
  *
  * Route -> { TripPreviewCard }
  */

@@ -4,6 +4,11 @@ import TravelerApi from '../api/api';
 import LoadingSpinner from '../common/LoadingSpinner';
 import TripPreviewCard from '../trips/TripPreviewCard';
 
+/**
+ * Component that displays details about a user. Also displays any posted trips.
+ * 
+ */
+
 const UserDetail = () => {
 
     const [user, setUser] = useState(null);

@@ -1,19 +1,27 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { useParams, useHistory, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import ImageCard from './ImageCard';
 import TravelerApi from '../api/api';
 import LoadingSpinner from '../common/LoadingSpinner';
 import UserContext from '../auth/UserContext';
 import Alert from '../common/Alert';
 
+/**
+ * Shows a more detailed view of a Trip. 
+ * Routed to as /trips/{tripID}
+ * Displays trip title, username of author, and 
+ * all trip images.
+ * If this trip belongs to the person who is logged in, then
+ * a "delete" button will appear to the right. Clicking this
+ * button will delete the trip.
+ * 
+ */
 const TripDetail = () => {
 
     const { currentUser } = useContext(UserContext);
     const [trip, setTrip] = useState();
     const [isOwnTrip, setIsOwnTrip] = useState(false);
     const [tripDeleted, setTripDeleted] = useState(false);
-
-    const history = useHistory();
 
     const { id } = useParams();
     console.debug("Trip Detail", "tripId=", id);
@@ -31,7 +39,7 @@ const TripDetail = () => {
         fetchTrip();
     }, [id]);
 
-    useEffect( () => {
+    useEffect( () => { //This second useEffect is necessary because setting state is asynchronous
         if (trip) {
             setIsOwnTrip(trip.userId === currentUser.id);
         }

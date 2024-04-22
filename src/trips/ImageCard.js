@@ -2,6 +2,10 @@ import React from 'react';
 import "./ImageCard.css";
 import Tag from './Tag';
 
+/**
+ * The ImageCard is used as part of the TripDetail component. It
+ * displays each trip picture in all it's glory. It also displays any tags.
+ */
 const ImageCard = ({ image, caption, tag1, tag2, tag3, tag4, tag5 }) => {
 
     console.debug("ImageCard:", image);

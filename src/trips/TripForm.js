@@ -8,9 +8,12 @@ import "./TripForm.css";
 /** New Trip form.
  *
  * Shows form and manages update to state on changes.
- * On submission:
+ * On submission: Routed to /thankyou
+ * 
+ * The user can upload a variable number of image files and captions
+ * There a buttons to add and delete fields
  *
- * Routes -> NewTripForm -> Alert
+ * Routes -> TripForm -> Alert
  * Routed as /trips/new
  */
 
@@ -34,8 +37,10 @@ function TripForm() {
   );
 
   /** Handle form submit:
-   *
-   * Calls login func prop and, if successful, redirect to /trips.
+   *  We first create a new trip using the submitted trip data.
+   * Then, we upload each file and it's corresponding caption 
+   * one by one.
+   * After this, we route to /thankyou
    */
 
   async function handleSubmit(evt) {
@@ -64,24 +69,27 @@ function TripForm() {
         setTripData(data => ({ ...data, [name]: value }));
     }
 
-  /** Update form data field */
+  /** Update file data field */
   function handleFileChange(index, evt) {
     let data = [...inputFields];
     data[index]["file"] = evt.target.files[0];
     setInputFields(data);
   }
 
+  /** Update caption data field */
   function handleCaptionChange(index, evt) {
     let data = [...inputFields];
     data[index]["caption"] = evt.target.value;
     setInputFields(data);
   }
 
+  /** Add additional file and caption fields */
   const addFields = () => {
     let newField = { file: "", caption: "" };
     setInputFields([...inputFields, newField]);
   };
 
+  /** Delete fields from the form */
   const removeFields = (index) => {
     let data = [...inputFields];
     data.splice(index, 1);
