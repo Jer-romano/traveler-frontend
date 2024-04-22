@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import TravelerApi from "../api/api";
 import TripPreviewCard from "./TripPreviewCard";
 import LoadingSpinner from "../common/LoadingSpinner";
-import UserContext from "../auth/UserContext";
 import "./TripList.css";
 
 /** Show page with list of trips.
@@ -19,8 +18,6 @@ import "./TripList.css";
 
 function TripList() {
   console.debug("TripList");
-
-  //const { currentUser } = useContext(UserContext);
 
   const [trips, setTrips] = useState(null);
   const sampleImage = {fileUrl: "https://traveler-capstone-images.s3.us-east-2.amazonaws.com/tripimages/Image-Placeholder.jpeg"};

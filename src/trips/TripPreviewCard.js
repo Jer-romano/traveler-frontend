@@ -16,7 +16,7 @@ function TripPreviewCard({id, title, tripImage, username }) {
   return (
       <Link className="TripPreviewCard card" to={`/trips/${id}`}>
         <img src={tripImage.fileUrl}
-                             alt={"A picture of the trip"}
+                             alt={"The trip"}
                              className="card-img-top" />
         <div className="card-body">
            <h2 className="card-title">

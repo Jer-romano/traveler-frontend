@@ -20,21 +20,28 @@ const TripDetail = () => {
 
     useEffect( () => {
         async function fetchTrip() {
-            let res = await TravelerApi.getTrip(id);
-            setTrip(res);
-            console.log("Trip:", trip);
-            setIsOwnTrip(trip.userId === currentUser.id);
-
+            try {
+                let res = await TravelerApi.getTrip(id);
+                setTrip(res);
+                //console.log("Trip:", res); // Use res instead of trip
+            } catch (error) {
+                console.error("Error fetching trip:", error);
+            }
         }
         fetchTrip();
     }, [id]);
+
+    useEffect( () => {
+        if (trip) {
+            setIsOwnTrip(trip.userId === currentUser.id);
+        }
+    }, [trip, currentUser])
 
     async function deleteTrip() {
         let res = await TravelerApi.deleteTrip(id);
         if(res === id) {
             setTripDeleted(true);
         }
-      //  history.push("/");
     }
 
     if(!trip) return <LoadingSpinner />;

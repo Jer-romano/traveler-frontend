@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
-//process.env.REACT_APP_BASE_URL
 /** API Class.
  *
  * Static class tying together methods used to get/send to to the API.
@@ -34,8 +33,8 @@ class TravelerApi {
       return (await axios({ url, method, data, params, headers })).data;
     } catch (err) {
       console.error("API Error:", err.response);
-      //let message = err.response.data.error.message;
-     // throw Array.isArray(message) ? message : [message];
+      let message = err.response.data.error.message;
+      throw Array.isArray(message) ? message : [message];
     }
   }
 
@@ -70,7 +69,6 @@ class TravelerApi {
 
   static async getTrip(id) {
     let res = await this.request(`trips/${id}`);
-    //return res.trip;
     return res.trip;
   }
 

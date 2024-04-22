@@ -4,7 +4,7 @@ import React from "react";
  */
 
 function HotelCard({ name, description, }) {
-  console.debug("HotelCard");
+  //console.debug("HotelCard");
 
   return (
     <div className="card mb-2">

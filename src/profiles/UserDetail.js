@@ -79,7 +79,7 @@ const UserDetail = () => {
                                           t.images[0] :
                                           sampleImage}
                                 id={t.tripId}
-                                key={t.tripId} />
+                                 />
                         </div>
                      ))}
                 </div>
