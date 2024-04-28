@@ -29,7 +29,7 @@ This site is for travel enthusiasts who want to share their travel photos with t
 - The app will return to you a list of twenty-something hotels that are available!
 
 ### API
-- My site uses two APIs. The Google Cloud Vision API and the [Booking COM](https://rapidapi.com/DataCrawler/api/booking-com15/) API. 
+- My site uses two APIs. The [Google Cloud Vision](https://cloud.google.com/vision/docs) API and the [Booking COM](https://rapidapi.com/DataCrawler/api/booking-com15/) API. 
 - Google Cloud Vision is used to generate the tags for uploaded images. I chose this API because it's free and relatively easy to use.
 - The Booking.com API is used to find hotels. It isn't free, but it is easy to use and provides accurate results. The API can also be used to find flights, taxis, attractions, etc. 
 
@@ -41,6 +41,10 @@ This site is for travel enthusiasts who want to share their travel photos with t
 - bCrypt and JSON Web Tokens for authentication
 - JSONSchema for validation
 - Bootstrap for styling 
+
+### Deployment
+- The frontend is deployed using Surge, and the backend is deployed on Render.com
+- The database is hosted on ElephantSQL.
 
 ### Future Goals
 Some features I'd like to implement in the future include:
