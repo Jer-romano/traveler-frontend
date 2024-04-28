@@ -1,5 +1,5 @@
 # TravelBuddy - A Social Media Site for Travelers!
-### Deployed [here:](https://powerful-scale.surge.sh) 
+### Deployed [here:](https://travel-haircut.surge.sh) 
 
 
 ### What can you do on this site?
