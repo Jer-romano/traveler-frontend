@@ -30,6 +30,7 @@ const TripDetail = () => {
         async function fetchTrip() {
             try {
                 let res = await TravelerApi.getTrip(id);
+                console.debug("Trip Result:", res);
                 setTrip(res);
                 //console.log("Trip:", res); // Use res instead of trip
             } catch (error) {

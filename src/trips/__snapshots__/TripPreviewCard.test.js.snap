@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <a
+    class="TripPreviewCard card"
+    href="/trips/1"
+  >
+    <img
+      alt="The trip"
+      class="card-img-top"
+      src="../images/brazil_photo2.jpeg"
+    />
+    <div
+      class="card-body"
+    >
+      <h2
+        class="card-title"
+      >
+        The best trip
+      </h2>
+      <span
+        class="mt-4"
+      >
+        <span
+          class="tag"
+        >
+          Cool
+        </span>
+        <span
+          class="tag"
+        >
+          Awesome
+        </span>
+        <span
+          class="tag"
+        >
+          Sky
+        </span>
+        <span
+          class="tag"
+        >
+          Cloud
+        </span>
+        <span
+          class="tag"
+        >
+          Building
+        </span>
+      </span>
+      <h4
+        class="mt-4"
+      >
+        Posted by testuser
+      </h4>
+    </div>
+  </a>
+</DocumentFragment>
+`;

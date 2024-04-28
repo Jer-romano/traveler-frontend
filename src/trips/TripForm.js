@@ -11,7 +11,7 @@ import "./TripForm.css";
  * On submission: Routed to /thankyou
  * 
  * The user can upload a variable number of image files and captions
- * There a buttons to add and delete fields
+ * There are buttons to add and delete fields
  *
  * Routes -> TripForm -> Alert
  * Routed as /trips/new
@@ -50,17 +50,18 @@ function TripForm() {
         let resp = await TravelerApi.createTrip(tripData);
         let tripId = resp.id;
 
-        inputFields.forEach(async (field) => {
+          for(let field of inputFields) {
             const formData = new FormData();
             formData.append(`file`, field.file);
             formData.append(`caption`, field.caption);
             await TravelerApi.addImageToTrip(tripId, formData);
-          });
-
+          }
+          history.push("/thankyou");
+     
     } catch(error) {
         console.error("Error submitting new trip:", error);
     }
-    history.push("/thankyou");
+    
   }
 
 /** Update form data field */
@@ -106,6 +107,7 @@ function TripForm() {
               <div className="form-group">
                 <label htmlFor="title">Title of Trip</label>
                 <input
+                  id="title"
                   name="title"
                   className="form-control"
                   value={tripData.title}
@@ -115,9 +117,11 @@ function TripForm() {
               <label>Choose your images</label>
               {inputFields.map((input, index) => {
                 return (
-                  <div key={index}>
+                  <div className="form-group" key={index}>
+                    <label htmlFor="file">Image #{index+1}</label>
                     <input
                       type="file"
+                      id="file"
                       name="file"
                       accept="image/png image/jpeg"
                       className="form-control"

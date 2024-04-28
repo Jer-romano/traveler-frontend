@@ -2,16 +2,17 @@ import React from "react";
 import UserContext from "./auth/UserContext";
 
 const demoUser = {
+  id: "mockUserId",
   username: "testuser",
-  first_name: "testfirst",
-  last_name: "testlast",
-  email: "test@test.net",
-  photo_url: null,
+  firstName: "testfirst",
+  lastName: "testlast",
+  profImage: null,
+  about: "To spain"
 };
 
 const UserProvider =
-    ({ children, currentUser = demoUser, hasAppliedToJob = () => false }) => (
-    <UserContext.Provider value={{ currentUser, hasAppliedToJob }}>
+    ({ children, currentUser = demoUser }) => (
+    <UserContext.Provider value={{ currentUser }}>
       {children}
     </UserContext.Provider>
 );

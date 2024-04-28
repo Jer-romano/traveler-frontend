@@ -20,7 +20,7 @@ function Homepage() {
       <div className="Homepage hero-home">
         <div className="container text-center">
           <div className="greeting">
-          <h1 className="mb-4 font-weight-bold">Traveler</h1>
+          <h1 className="mb-4 font-weight-bold">TravelBuddy</h1>
           <p className="lead"> Share the world with others. </p>
           {currentUser
               ? <h2>
