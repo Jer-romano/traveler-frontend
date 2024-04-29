@@ -43,7 +43,7 @@ This site is for travel enthusiasts who want to share their travel photos with t
 - Bootstrap for styling 
 
 ### Deployment
-- The frontend is deployed using Surge, and the backend is deployed on Render.com
+- The frontend is deployed using Surge, and the backend is deployed on Render.com.
 - The database is hosted on ElephantSQL.
 
 ### Future Goals
@@ -52,3 +52,4 @@ Some features I'd like to implement in the future include:
 - Commenting on trips
 - Ability to "like" a trip
 - Improving styling
+- Add more tests
