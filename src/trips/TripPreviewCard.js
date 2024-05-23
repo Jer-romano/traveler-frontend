@@ -23,13 +23,13 @@ function TripPreviewCard({id, title, tripImage, username }) {
            {title}
           </h2>
    
-          <span className="mt-4">
+          <div className="mt-4">
             <Tag tag={tripImage.tag1}/>
             <Tag tag={tripImage.tag2}/>
             <Tag tag={tripImage.tag3}/>
             <Tag tag={tripImage.tag4}/>
             <Tag tag={tripImage.tag5}/>
-          </span>
+          </div>
           <h4 className="mt-4">
             {/* {profileImage && <img src={profileImage}
                              alt={"A picture of the user"}
@@ -38,7 +38,13 @@ function TripPreviewCard({id, title, tripImage, username }) {
           </h4>
         </div>
       </Link>
+
   );
 }
 
 export default TripPreviewCard;
+
+{/* <div className="TripPreviewCard">
+<img src={tripImage.fileUrl} className="resp-img" />
+<h2>{title}</h2>
+</div> */}
